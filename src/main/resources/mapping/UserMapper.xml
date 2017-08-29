@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="cx.dao.UserDaoI" >
+	<!-- namespace对应的是dao层的接口 -->
+	
+  <resultMap  type="cx.entity.User" id="WRAP_T_USER" >
+  	<!-- column对应的是数据库中的字段，property对应的是实体类中的字段 -->
+    <id column="id_" property="id" />
+    <result column="username_" property="username" />
+    <result column="chinaName_" property="chinaName" />
+    <result column="password_" property="password" />
+  </resultMap>
+ 
+
+
+
+    <select id="getListUser" resultMap="WRAP_T_USER">
+      SELECT  *  FROM  u_user as u_u
+    </select>
+  
+</mapper>
